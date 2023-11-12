@@ -1,17 +1,30 @@
 from enum import Enum
-from libs.rules import rules
+import random
 
 class Blocks(Enum):
     DIRT = 1
     ICE = 2
     
-class Block():
-    def __init__(self, type: Blocks = Blocks.DIRT) -> None:
-        self.type = type
-        self.x = 0
-        self.y = 0
-        self.options = rules[self.type]
-        self.collapsed = False
+Sprites = {
+    Blocks.DIRT : "assets/dirt.jpg",
+    Blocks.ICE : "assets/ice.jpg"
+}
+
+Rules = {
+    Blocks.DIRT : {
+        95: Blocks.DIRT,
+        5: Blocks.ICE
+    },
+    Blocks.ICE : {
+        95: Blocks.ICE,
+        5: Blocks.DIRT
+    }
+}
+
+def RandomBlock(options):
+    rand_list = []
+    
+    for key, value in options.items():
+        rand_list += [value] * key
         
-    def __repr__(self) -> str:
-        return f"{str(self.type).split('.')[1]}"
+    return random.choice(rand_list)
