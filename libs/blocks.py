@@ -16,8 +16,8 @@ Rules = {
         5: Blocks.ICE
     },
     Blocks.ICE : {
-        95: Blocks.ICE,
-        5: Blocks.DIRT
+        70: Blocks.ICE,
+        30: Blocks.DIRT
     }
 }
 

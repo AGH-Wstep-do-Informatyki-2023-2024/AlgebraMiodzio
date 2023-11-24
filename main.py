@@ -1,5 +1,9 @@
 # Example file showing a circle moving on screen
 import pygame as pg
+from test import grid, GenerateGrid
+from libs.blocks import Sprites
+
+print(grid)
 
 # pg setup
 pg.init()
@@ -30,18 +34,26 @@ while running:
 
     screen.fill((0, 0, 0))
     
-    # change matrix after spacebar
-    if pg.key.get_pressed()[pg.K_SPACE]:
-        matrix = [[random.randint(0,1) for x in range(0, 10)] for y in range(0, 10)]
+    # # change matrix after spacebar
+    # if pg.key.get_pressed()[pg.K_SPACE]:
+    #     matrix = [[random.randint(0,1) for x in range(0, 10)] for y in range(0, 10)]
 
-    for index, row in enumerate(matrix):
-        amount = 0
-        for column in row:
-            if column:
-                screen.blit(dirt, ((amount * dirt_w),(index * dirt_h)))
-            else:
-                screen.blit(ice, ((amount * ice_w), (index * ice_h)))
-            amount += 1
+    # if pg.key.get_pressed()[pg.K_SPACE]:
+    #     GenerateGrid()
+    
+    for row_index, row in enumerate(grid):
+        for column_index, item in enumerate(row):
+            screen.blit(pg.image.load(Sprites[item.type]), ((column_index * dirt_w), (row_index * dirt_w)))
+            
+
+    # for index, row in enumerate(matrix):
+    #     amount = 0
+    #     for column in row:
+    #         if column:
+    #             screen.blit(dirt, ((amount * dirt_w),(index * dirt_h)))
+    #         else:
+    #             screen.blit(ice, ((amount * ice_w), (index * ice_h)))
+    #         amount += 1
 
     pg.display.flip()
 

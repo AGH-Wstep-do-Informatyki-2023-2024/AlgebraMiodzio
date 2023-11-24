@@ -9,12 +9,12 @@ grid = [[Tile() for x in range(0, DIM)] for y in range(0, DIM)]
 grid[0][0] = Tile(Blocks.ICE)
 grid[0][0].collapsed = True
 
-def ApplyRules(tile):
-    if tile.collapsed:
+def ApplyRules(tile: Tile, target: Tile):
+    if target.collapsed:
         return
     
-    tile.type = RandomBlock(tile.options)
-    tile.collapsed = True
+    target.ApplyType(RandomBlock(tile.options))
+    target.collapsed = True
 
 for row_index, row in enumerate(grid):
     for tile_index, tile in enumerate(row):
@@ -25,17 +25,16 @@ for row_index, row in enumerate(grid):
             # look at neighbors and collapse based on rules
             if tile_index > 0:
                 left = grid[row_index][tile_index - 1]
-                ApplyRules(left)    
+                ApplyRules(tile, left)    
             if tile_index < DIM - 1:
                 right = grid[row_index][tile_index + 1]
-                ApplyRules(right)
+                ApplyRules(tile, right)
             if row_index > 0:
                 up = grid[row_index - 1][tile_index]
-                ApplyRules(up)
+                ApplyRules(tile, up)
             if row_index < DIM - 1:
                 down = grid[row_index + 1][tile_index]
-                ApplyRules(down)
+                ApplyRules(tile, down)
 
-for row in grid:
-    print(row)
-    
+# for row in grid:
+#     print(row)
