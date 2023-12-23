@@ -1,14 +1,14 @@
 # Example file showing a circle moving on screen
 import pygame as pg
 from libs.blocks import Sprites, SpriteSize, Blocks
-from libs.tile import Tile, ApplyRules
+from libs.tile import Tile
 
-DIM = 5
+DIM = 10
 
 # pg setup
 pg.init()
 pg.display.set_caption("AlgebraMiodzio - Test")
-screen = pg.display.set_mode((1280, 800))
+screen = pg.display.set_mode((1120, 960))
 screen_w, screen_h = screen.get_size()
 clock = pg.time.Clock()
 running = True
@@ -19,27 +19,25 @@ size_w, size_h = SpriteSize
 def GenerateGrid():    
     grid = [[Tile() for x in range(0, DIM)] for y in range(0, DIM)]
 
-    grid[0][0] = Tile(Blocks.ICE)
-    grid[0][0].collapsed = True
+    # grid[3][3] = Tile(Blocks.ICE)
+    # grid[3][3].collapsed = True
     
     for row_index, row in enumerate(grid):
         for tile_index, tile in enumerate(row):
-            
-            if tile.collapsed and tile_index != 0 and row_index != 0:
-                continue
-            else:
-                if tile_index > 0:
-                    left = grid[row_index][tile_index - 1]
-                    ApplyRules(tile, left)    
-                if tile_index < DIM - 1:
-                    right = grid[row_index][tile_index + 1]
-                    ApplyRules(tile, right)
-                if row_index > 0:
-                    up = grid[row_index - 1][tile_index]
-                    ApplyRules(tile, up)
-                if row_index < DIM - 1:
-                    down = grid[row_index + 1][tile_index]
-                    ApplyRules(tile, down)
+            if tile_index > 0:
+                left = grid[row_index][tile_index - 1]
+                left.ApplyRules(tile)    
+            if tile_index < DIM - 1:
+                right = grid[row_index][tile_index + 1]
+                right.ApplyRules(tile)
+            if row_index > 0:
+                up = grid[row_index - 1][tile_index]
+                up.ApplyRules(tile)
+            if row_index < DIM - 1:
+                down = grid[row_index + 1][tile_index]
+                down.ApplyRules(tile)
+                    
+                
                     
     return grid
 
