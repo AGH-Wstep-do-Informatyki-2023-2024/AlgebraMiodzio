@@ -42,3 +42,50 @@ This project is inspired by the incredible work in procedural generation and the
 Feel free to reach out with any questions, feedback, or suggestions. Happy mapping!
 
 Note: This README assumes you have Python installed on your machine.
+
+
+# ITALIAN TRANSLATION
+
+
+# AlgebraMiodzio
+## Generatore di Mappe 2D Utilizzando la Funzione di Crollo d'Onda
+
+Benvenuti nel progetto AlgebraMiodzio, un potente generatore di mappe 2D che sfrutta la Funzione di Crollo d'Onda per creare mappe intricate e diverse. Che tu sia uno sviluppatore di giochi, un designer di livelli, o semplicemente qualcuno affascinato dalla generazione procedurale, questo strumento è progettato per fornirti un'esperienza di generazione di mappe fluida e creativa.
+
+# Caratteristiche
+Funzione di Crollo d'Onda: Utilizza la Funzione di Crollo d'Onda, un algoritmo potente che permette la creazione di mappe complesse e realistiche con un input minimo.
+
+Parametri Personalizzabili: Regola il processo di generazione della mappa con una varietà di parametri personalizzabili. Ajusta il terreno, la densità e altri fattori per ottenere il risultato desiderato.
+
+Interfaccia Intuitiva: L'interfaccia user-friendly rende facile sia per i principianti che per gli utenti esperti navigare e controllare il processo di generazione della mappa.
+
+# Come Iniziare
+Clona il Repository:
+bash
+Copy code
+git clone https://github.com/your-username/AlgebraMiodzio.git
+Installa le Dipendenze:
+bash
+Copy code
+# Naviga alla directory del progetto
+cd AlgebraMiodzio
+
+# Installa le dipendenze
+pip install -r requirements.txt 
+Esegui l'Applicazione:
+bash
+Copy code
+python main.py
+Contribuire
+Accogliamo contributi per rendere AlgebraMiodzio ancora più robusto e versatile. Se hai idee per miglioramenti, correzioni di bug o nuove funzionalità, per favore apri un problema o invia una richiesta di pull.
+
+# Licenza
+AlgebraMiodzio è sotto la licenza MIT, che ti permette di usare e modificare liberamente il codice secondo le tue necessità.
+
+# Ringraziamenti
+Questo progetto si ispira all'incredibile lavoro nella generazione procedurale e nella Funzione di Crollo d'Onda. Estendiamo la nostra gratitudine alla comunità open-source per i loro preziosi contributi.
+
+Sentiti libero di contattarci per qualsiasi domanda, feedback o suggerimento. Buona mappatura!
+
+Nota: Questo README presuppone che tu abbia Python installato sul tuo computer.
+
