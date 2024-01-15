@@ -5,7 +5,7 @@ from libs.tile import Tile, ApplyRules
 
 DIM = 5
 
-# pg setup rb
+# pg setup r
 pg.init()
 pg.display.set_caption("AlgebraMiodzio - Test")
 screen = pg.display.set_mode((1280, 800))
