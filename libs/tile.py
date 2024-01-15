@@ -13,16 +13,9 @@ class Tile():
         self.type = type
         self.options = Rules[type]
         
-    # def ApplyRules(self, origin):
-    #     if self.collapsed:
-    #         return
+    def ApplyRules(self, origin):
+        if self.collapsed:
+            return
         
-    #     self.ApplyType(RandomBlock(origin.options))
-    #     self.collapsed = True
-        
-def ApplyRules(tile: Tile, target: Tile):
-    if target.collapsed:
-        return
-        
-    target.ApplyType(RandomBlock(tile.options))
-    target.collapsed = True
+        self.ApplyType(RandomBlock(origin.options))
+        self.collapsed = True
