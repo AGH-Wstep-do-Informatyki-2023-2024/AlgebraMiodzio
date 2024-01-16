@@ -59,9 +59,7 @@ while running:
     if pg.mouse.get_pressed()[0] == True:
         print(pg.mouse.get_pos())
         x , y = pg.mouse.get_pos()
-        print(int(x/10),int(y/10))
-        print("to ma wygerować problem")
-        print("to ma być jeszcze wiekszy problem XDD")
+        print(int(x/160),int(y/160))
         time.sleep(1)
         
         
