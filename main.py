@@ -61,6 +61,11 @@ while running:
         x , y = pg.mouse.get_pos()
         print(int(x/80),int(y/80))
         time.sleep(1)
+        print("Tu nie powino być zadnego błendu")
+        print("Tu nie powino być zadnego błendu")
+        print("Tu nie powino być zadnego błendu")
+        print("Tu nie powino być zadnego błendu")
+        print("Tu nie powino być zadnego błendu")
         
         
     for row_index, row in enumerate(grid):
