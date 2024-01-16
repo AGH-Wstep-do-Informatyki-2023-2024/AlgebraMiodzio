@@ -59,9 +59,11 @@ while running:
     if pg.mouse.get_pressed()[0] == True:
         print(pg.mouse.get_pos())
         x , y = pg.mouse.get_pos()
-        print(int(x/80),int(y/80))
+        print(int(x/10),int(y/10))
+        print("to ma wygerować problem")
+        print("to ma być jeszcze wiekszy problem XDD")
         time.sleep(1)
-        
+        break
         
     for row_index, row in enumerate(grid):
         for column_index, item in enumerate(row):
