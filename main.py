@@ -1,14 +1,15 @@
 # Example file showing a circle moving on screen
 import pygame as pg
+import time 
 from libs.blocks import Sprites, SpriteSize, Blocks
 from libs.tile import Tile
 
-DIM = 10
+DIM = 20
 
 # pg setup rb
 pg.init()
 pg.display.set_caption("AlgebraMiodzio - Test")
-screen = pg.display.set_mode((1120, 960))
+screen = pg.display.set_mode((1000, 750))
 screen_w, screen_h = screen.get_size()
 clock = pg.time.Clock()
 running = True
@@ -54,6 +55,13 @@ while running:
     
     if pg.key.get_pressed()[pg.K_SPACE]:
         grid = GenerateGrid()
+
+    if pg.mouse.get_pressed()[0] == True:
+        print(pg.mouse.get_pos())
+        x , y = pg.mouse.get_pos()
+        print(int(x/80),int(y/80))
+        time.sleep(1)
+        
         
     for row_index, row in enumerate(grid):
         for column_index, item in enumerate(row):
