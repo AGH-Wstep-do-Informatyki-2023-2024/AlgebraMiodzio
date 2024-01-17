@@ -6,6 +6,8 @@ from libs.blocks import Printable
 
 DIM = 20
 
+# xd
+
 pg.init()
 pg.display.set_caption("AlgebraMiodzio - Test")
 screen = pg.display.set_mode((1000, 750))
