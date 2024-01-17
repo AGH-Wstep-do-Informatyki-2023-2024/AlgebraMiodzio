@@ -1,15 +1,11 @@
-# Example file showing a circle moving on screen
 import pygame as pg
 import time 
 from libs.blocks import Sprites, SpriteSize, Blocks
 from libs.tile import Tile
-from libs.blocks import Rules
-from libs.blocks import ReRules
 from libs.blocks import Printable
 
 DIM = 20
 
-# pg setup rb
 pg.init()
 pg.display.set_caption("AlgebraMiodzio - Test")
 screen = pg.display.set_mode((1000, 750))
@@ -22,9 +18,6 @@ size_w, size_h = SpriteSize
 
 def GenerateGrid():    
     grid = [[Tile() for x in range(0, DIM)] for y in range(0, DIM)]
-
-    # grid[3][3] = Tile(Blocks.ICE)
-    # grid[3][3].collapsed = True
     
     for row_index, row in enumerate(grid):
         for tile_index, tile in enumerate(row):
@@ -39,9 +32,7 @@ def GenerateGrid():
                 up.ApplyRules(tile)
             if row_index < DIM - 1:
                 down = grid[row_index + 1][tile_index]
-                down.ApplyRules(tile)
-                    
-                
+                down.ApplyRules(tile)                
                     
     return grid
 
@@ -51,14 +42,6 @@ grid = GenerateGrid()
 font = pg.font.SysFont("Comic Sans MS", 24)
 text = font.render("", False, [128, 64, 255])
 
-
-def text_edit(text):
-    for row in text:
-        print(str(text[row]))
-        change = ReRules[Blocks.DIRT[Blocks.DIRT]]
-        print(change)
-
-
 def info(x,y,grid):
     print(x,y)
     tile = grid[y][x]
@@ -66,7 +49,7 @@ def info(x,y,grid):
     data = {
         "name": tile.name,
         "type": str(tile),
-        "options": [f"{Printable[y]} : {x}%" for x,y in tile.options.items()],
+        "options": [f"{Printable[x]} : {y}%" for x,y in tile.options.items()],
         "collapsed": tile.collapsed
     }
     

@@ -25,6 +25,7 @@ Printable = {
     Blocks.PUMPKIN : "Pumpkin",
     Blocks.SNOW : "Snow",
     Blocks.STONE : "Stone"
+
 }
     
 Sprites = {
@@ -43,85 +44,56 @@ SpriteSize = (160, 160)
 
 Rules = {
     Blocks.DIRT: {
-        70: Blocks.DIRT,
-        5: Blocks.ICE,
-        5: Blocks.COAL,
-        5: Blocks.STONE,
-        5: Blocks.OBSIDIAN,
-        1: Blocks.DIAMOND,
-        3: Blocks.PUMPKIN,
-        1: Blocks.GLOWSTONE,
+        Blocks.DIRT : 70,
+        Blocks.ICE : 5,
+        Blocks.COAL : 5,
+        Blocks.STONE : 5,
+        Blocks.OBSIDIAN : 5,
+        Blocks.DIAMOND : 1,
+        Blocks.PUMPKIN : 3,
+        Blocks.GLOWSTONE : 1,
     },
     Blocks.ICE: {
-        90: Blocks.ICE,
-        10: Blocks.DIRT
+        Blocks.ICE : 90,
+        Blocks.DIRT : 10,
     },
     Blocks.COAL: {
-        50: Blocks.COAL,
-        50: Blocks.STONE
+        Blocks.COAL : 50,
+        Blocks.STONE : 50,
     },
     Blocks.DIAMOND: {
-        10: Blocks.DIAMOND,
-        40: Blocks.OBSIDIAN,
-        50: Blocks.GLOWSTONE
+        Blocks.DIAMOND : 10,
+        Blocks.OBSIDIAN : 40,
+        Blocks.GLOWSTONE : 50,
     },
     Blocks.GLOWSTONE: {
-        60: Blocks.GLOWSTONE,
-        40: Blocks.PUMPKIN
+        Blocks.GLOWSTONE : 60,
+        Blocks.PUMPKIN : 40,
     },
     Blocks.OBSIDIAN: {
-        25: Blocks.OBSIDIAN,
-        25: Blocks.SNOW,
-        50: Blocks.GLOWSTONE
+        Blocks.OBSIDIAN : 25,
+        Blocks.SNOW : 25,
+        Blocks.GLOWSTONE : 50,
     },
     Blocks.PUMPKIN: {
-        50: Blocks.PUMPKIN,
-        50: Blocks.GLOWSTONE
+        Blocks.PUMPKIN : 50,
+        Blocks.GLOWSTONE : 50,
     },
     Blocks.SNOW: {
-        70: Blocks.SNOW,
-        30: Blocks.ICE
+        Blocks.SNOW : 70,
+        Blocks.ICE : 30,
     },
     Blocks.STONE: {
-        60: Blocks.STONE,
-        25: Blocks.COAL,
-        15: Blocks.OBSIDIAN,
+        Blocks.STONE : 60,
+        Blocks.COAL : 25,
+        Blocks.OBSIDIAN : 15,
     }
 }
-
-
-#Revers Rules
-ReRules = {
-    Blocks.DIRT: {
-        Blocks.DIRT: 70,
-        Blocks.ICE: 5,
-        Blocks.COAL:     5,
-        Blocks.STONE:    5,
-        Blocks.OBSIDIAN: 5,
-        Blocks.DIAMOND:  1,
-        Blocks.PUMPKIN:  3,
-        Blocks.GLOWSTONE : 1, 
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 def RandomBlock(options):
     rand_list = []
     
     for key, value in options.items():
-        rand_list += [value] * key
+        rand_list += [key] * value
         
     return random.choice(rand_list)
