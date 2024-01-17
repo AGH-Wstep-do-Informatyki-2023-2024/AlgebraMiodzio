@@ -27,7 +27,7 @@ Sprites = {
     Blocks.STONE : img("assets/stone.jpg")
 }
 
-SpriteSize = (80, 80)
+SpriteSize = (160, 160)
 
 Rules = {
     Blocks.DIRT: {
