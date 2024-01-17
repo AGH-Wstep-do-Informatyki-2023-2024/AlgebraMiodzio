@@ -15,6 +15,18 @@ class Blocks(Enum):
     
 img = lambda x: pg.image.load(x)
     
+Printable = {
+    Blocks.DIRT : "Dirt",
+    Blocks.ICE : "Ice",
+    Blocks.COAL : "Coal",
+    Blocks.DIAMOND : "Diamond",
+    Blocks.GLOWSTONE : "Glowstone",
+    Blocks.OBSIDIAN : "Obsidian",   
+    Blocks.PUMPKIN : "Pumpkin",
+    Blocks.SNOW : "Snow",
+    Blocks.STONE : "Stone"
+}
+    
 Sprites = {
     Blocks.DIRT : img("assets/dirt.jpg"),
     Blocks.ICE : img("assets/ice.jpg"),
