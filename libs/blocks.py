@@ -31,14 +31,14 @@ SpriteSize = (160, 160)
 
 Rules = {
     Blocks.DIRT: {
-        70: Blocks.DIRT,
-        5: Blocks.ICE,
-        5: Blocks.COAL,
-        5: Blocks.STONE,
-        5: Blocks.OBSIDIAN,
-        1: Blocks.DIAMOND,
-        3: Blocks.PUMPKIN,
-        1: Blocks.GLOWSTONE,
+        Blocks.DIRT:72,
+        7: Blocks.ICE,
+        7: Blocks.COAL,
+        7: Blocks.STONE,
+        7: Blocks.OBSIDIAN,
+        3: Blocks.DIAMOND,
+        5: Blocks.PUMPKIN,
+        3: Blocks.GLOWSTONE,
     },
     Blocks.ICE: {
         90: Blocks.ICE,
