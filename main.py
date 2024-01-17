@@ -54,8 +54,7 @@ def info(x,y,grid):
         "options": [f"{Printable[x]} : {y}%" for x,y in tile.options.items()],
         "collapsed": tile.collapsed
     }
-    
-    print(data)
+    return str(data["options"])
 
 while running:
     dt = clock.tick(60) / 1000.0
@@ -79,8 +78,8 @@ while running:
         print(pg.mouse.get_pos())
         x , y = pg.mouse.get_pos()
         time.sleep(0.2)
-        info(int(x/160),int(y/160),grid)
-        text = font.render("to jest"+str(x)+"a to jest"+str(y)+"prawda", False, [128, 64, 255]) 
+        msg = info(int(x/160),int(y/160),grid)
+        text = font.render(msg, False, [188, 184, 184],[87, 86, 86]) 
     screen.blit(text, [0, 0])
 
     pg.display.flip()
