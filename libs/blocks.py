@@ -77,6 +77,35 @@ Rules = {
     }
 }
 
+
+#Revers Rules
+ReRules = {
+    Blocks.DIRT: {
+        Blocks.DIRT: 70,
+        Blocks.ICE: 5,
+        Blocks.COAL:     5,
+        Blocks.STONE:    5,
+        Blocks.OBSIDIAN: 5,
+        Blocks.DIAMOND:  1,
+        Blocks.PUMPKIN:  3,
+        Blocks.GLOWSTONE : 1, 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def RandomBlock(options):
     rand_list = []
     

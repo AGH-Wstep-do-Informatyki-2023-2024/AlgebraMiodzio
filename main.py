@@ -4,6 +4,7 @@ import time
 from libs.blocks import Sprites, SpriteSize, Blocks
 from libs.tile import Tile
 from libs.blocks import Rules
+from libs.blocks import ReRules
 
 DIM = 20
 
@@ -52,7 +53,9 @@ text = font.render("", False, [128, 64, 255])
 
 def text_edit(text):
     for row in text:
-        print(str(text[row])) 
+        print(str(text[row]))
+        change = ReRules[Blocks.DIRT[Blocks.DIRT]]
+        print(change)
 
 
 def info(x,y,grid):
