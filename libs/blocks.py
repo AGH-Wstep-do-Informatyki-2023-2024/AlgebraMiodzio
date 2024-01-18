@@ -36,74 +36,86 @@ Sprites = {
     Blocks.GRASS: img("assets/grass.jpg")
 }
 
+Printable = {
+    Blocks.DIRT : "Dirt",
+    Blocks.ICE : "Ice",
+    Blocks.COAL : "Coal",
+    Blocks.DIAMOND : "Diamond",
+    Blocks.GLOWSTONE : "Glowstone",
+    Blocks.OBSIDIAN : "Obsidian",   
+    Blocks.PUMPKIN : "Pumpkin",
+    Blocks.SNOW : "Snow",
+    Blocks.STONE : "Stone",
+    Blocks.WATER: "Water",
+    Blocks.GRASS: "Grass",
+}
+
 Rules = {
     Blocks.DIRT: {
         #70: Blocks.DIRT,
-        70: Blocks.GRASS,
-        5: Blocks.ICE,
-        10: Blocks.STONE,
-        5: Blocks.OBSIDIAN,
-        2: Blocks.PUMPKIN,
-        8: Blocks.WATER
-        
-        
+        Blocks.GRASS: 70,
+        Blocks.ICE: 5,
+        Blocks.STONE: 10,
+        Blocks.OBSIDIAN: 5,
+        Blocks.PUMPKIN: 2,
+        Blocks.WATER: 8,
     },
     Blocks.ICE: {
-        60: Blocks.DIRT,
-        20: Blocks.STONE,
-        5: Blocks.OBSIDIAN,   
-        25: Blocks.WATER
+        Blocks.DIRT: 60,
+        Blocks.STONE: 20,
+        Blocks.OBSIDIAN: 5,   
+        Blocks.WATER: 25,
     },
     Blocks.COAL: {
-        #50: Blocks.COAL,
-        100: Blocks.STONE
+        #Blocks.COAL: 50,
+        Blocks.STONE: 100,
     },
     Blocks.DIAMOND: {
-        100: Blocks.STONE
+        Blocks.STONE: 100,
     },
     Blocks.GLOWSTONE: {
-        #60: Blocks.GLOWSTONE,
-        2: Blocks.PUMPKIN,
-        90: Blocks.DIRT,
-        100: Blocks.GRASS,
-        28: Blocks.WATER
+        #Blocks.GLOWSTONE: 60,
+        Blocks.PUMPKIN: 2,
+        Blocks.DIRT: 90,
+        Blocks.GRASS: 100,
+        Blocks.WATER: 28,
     },
     Blocks.OBSIDIAN: {
-        #25: Blocks.OBSIDIAN,
-        20: Blocks.SNOW,
-        50: Blocks.DIRT,
-        30: Blocks.WATER
+        #Blocks.OBSIDIAN: 25,
+        Blocks.SNOW: 20,
+        Blocks.DIRT: 50,
+        Blocks.WATER: 30,
     },
     Blocks.PUMPKIN: {
-        #50: Blocks.PUMPKIN,
-        10: Blocks.GLOWSTONE,
-        90: Blocks.GRASS
+        #Blocks.PUMPKIN: 50,
+        Blocks.GLOWSTONE: 10,
+        Blocks.GRASS: 90,
     },
     Blocks.SNOW: {
-        #70: Blocks.SNOW,
-        80: Blocks.ICE,
-        20: Blocks.WATER
+        #Blocks.SNOW: 70,
+        Blocks.ICE: 80,
+        Blocks.WATER: 20,
     },
     Blocks.STONE: {
-        #60: Blocks.STONE,
-        15: Blocks.COAL,
-        5: Blocks.OBSIDIAN,
-        10: Blocks.DIAMOND,
-        70: Blocks.GRASS
+        #Blocks.STONE: 60,
+        Blocks.COAL: 15,
+        Blocks.OBSIDIAN: 5,
+        Blocks.DIAMOND: 1,
+        Blocks.GRASS: 70,
     },
     Blocks.WATER: {
-        #60: Blocks.STONE,
-        98: Blocks.WATER,
-        1: Blocks.GRASS,
-        1: Blocks.ICE
+        #Blocks.STONE: 60,
+        Blocks.WATER: 98,
+        Blocks.GRASS: 1,
+        Blocks.ICE: 1,
     },
     Blocks.GRASS: {
-        #60: Blocks.STONE,
-        10: Blocks.ICE,
-        30: Blocks.STONE,
-        20: Blocks.OBSIDIAN,
-        2: Blocks.PUMPKIN,
-        23: Blocks.WATER,
+        #Blocks.STONE: 60,
+        Blocks.ICE: 10,
+        Blocks.STONE: 30,
+        Blocks.OBSIDIAN: 20,
+        Blocks.PUMPKIN: 2,
+        Blocks.WATER: 23,
         
     }
 }
@@ -112,7 +124,7 @@ def RandomBlock(options):
     rand_list = []
     
     for key, value in options.items():
-        rand_list += [value] * key
+        rand_list += [key] * value
         
     return random.choice(rand_list)
 

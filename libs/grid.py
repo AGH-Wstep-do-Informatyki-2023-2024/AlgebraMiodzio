@@ -1,11 +1,11 @@
 from libs.tile import Tile
-from libs.blocks import Blocks, Rules, RandomBlock
+from libs.blocks import Blocks, Rules, RandomBlock, Printable
 from random import randint, choice
 
 def TryCollapse(x, y, act_num, num, up_right_down_left, grid, DIM):
 
     grid[x][y].type = choice(grid[x][y].possible_block)
-    print(f"{grid[x][y].possible_block} {grid[x][y].power} {grid[x][y].type} dla : {x} {y} {up_right_down_left}")
+    # print(f"{grid[x][y].possible_block} {grid[x][y].power} {grid[x][y].type} dla : {x} {y} {up_right_down_left}")
     
     def Powering(x,y, base):
         if(y <= DIM-1 and y >= 0 and x <= DIM-1 and x >= 0):
@@ -70,3 +70,12 @@ def GenGrid(DIM):
     grid[x][y].possible_block = [Blocks.GRASS]
     TryCollapse(x,y, 0, 1, 1, grid, DIM)
     return grid
+
+def GetInfo(x, y, grid):
+    # trzeba było zamienić x i y bo nie działało
+    data = {
+        "type": grid[y][x].type,
+        "options": [f"{value}% : {Printable[key]}" for key,value in Rules[grid[y][x].type].items()],
+    }
+    
+    return data
