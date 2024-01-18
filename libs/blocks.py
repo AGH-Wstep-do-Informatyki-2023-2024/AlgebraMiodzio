@@ -15,9 +15,12 @@ class Blocks(Enum):
     WATER = 10
     GRASS = 11
     
-img = lambda x: pg.image.load(x)
-
-
+SpriteSize = 10
+    
+def img(path):
+    tmp = pg.image.load(path)
+    tmp = pg.transform.scale(tmp, (SpriteSize, SpriteSize))
+    return tmp
 
 Sprites = {
     Blocks.DIRT : img("assets/dirt.jpg"),
@@ -32,8 +35,6 @@ Sprites = {
     Blocks.WATER: img("assets/water.jpg"),
     Blocks.GRASS: img("assets/grass.jpg")
 }
-
-SpriteSize = (160, 160)
 
 Rules = {
     Blocks.DIRT: {
