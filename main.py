@@ -1,17 +1,15 @@
 import pygame as pg
 import time 
-from libs.blocks import Sprites, SpriteSize, Blocks
+from libs.blocks import Sprites, SpriteSize, Printable, SpriteSize
 from libs.tile import Tile
-from libs.blocks import Printable
+DIM = 6
 
-DIM = 20
-
-# xd
+sprite_x, sprite_y = SpriteSize
+width, height = sprite_x * DIM, sprite_y * DIM
 
 pg.init()
 pg.display.set_caption("AlgebraMiodzio - Test")
-screen = pg.display.set_mode((1000, 750))
-screen_w, screen_h = screen.get_size()
+screen = pg.display.set_mode((width, height))
 clock = pg.time.Clock()
 running = True
 dt = 0
@@ -41,11 +39,10 @@ def GenerateGrid():
 grid = GenerateGrid()
 
 #Block info text
-font = pg.font.SysFont("Comic Sans MS", 24)
+font = pg.font.SysFont("Comic Sans MS", 20)
 text = font.render("", False, [128, 64, 255])
 
 def info(x,y,grid):
-    print(x,y)
     tile = grid[y][x]
 
     data = {
@@ -68,6 +65,7 @@ while running:
     #reset grid
     if pg.key.get_pressed()[pg.K_SPACE]:
         grid = GenerateGrid()
+        time.sleep(1)
 
     for row_index, row in enumerate(grid):
         for column_index, item in enumerate(row):
@@ -75,7 +73,6 @@ while running:
 
     #show info about blocks
     if pg.mouse.get_pressed()[0] == True:
-        print(pg.mouse.get_pos())
         x , y = pg.mouse.get_pos()
         time.sleep(0.2)
         msg = info(int(x/160),int(y/160),grid)

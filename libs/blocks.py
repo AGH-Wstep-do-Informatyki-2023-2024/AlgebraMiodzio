@@ -25,7 +25,6 @@ Printable = {
     Blocks.PUMPKIN : "Pumpkin",
     Blocks.SNOW : "Snow",
     Blocks.STONE : "Stone"
-
 }
     
 Sprites = {
@@ -64,7 +63,7 @@ Rules = {
     Blocks.DIAMOND: {
         Blocks.DIAMOND : 10,
         Blocks.OBSIDIAN : 40,
-        Blocks.GLOWSTONE : 50,
+        Blocks.STONE : 50,
     },
     Blocks.GLOWSTONE: {
         Blocks.GLOWSTONE : 60,
@@ -77,7 +76,8 @@ Rules = {
     },
     Blocks.PUMPKIN: {
         Blocks.PUMPKIN : 50,
-        Blocks.GLOWSTONE : 50,
+        Blocks.GLOWSTONE : 20,
+        Blocks.DIRT : 30
     },
     Blocks.SNOW: {
         Blocks.SNOW : 70,
@@ -86,7 +86,8 @@ Rules = {
     Blocks.STONE: {
         Blocks.STONE : 60,
         Blocks.COAL : 25,
-        Blocks.OBSIDIAN : 15,
+        Blocks.OBSIDIAN : 10,
+        Blocks.DIAMOND : 5
     }
 }
 
