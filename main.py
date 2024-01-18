@@ -45,11 +45,12 @@ def info(x,y,grid):
 
     data = {
         "name": tile.name,
-        "type": str(tile),
-        "options": [f"{Printable[x]} : {y}%" for x,y in tile.options.items()],
-        "collapsed": tile.collapsed
+        "options": [f"{y}% : {Printable[x]}" for x,y in tile.options.items()],
     }
-    return str(data["options"])
+    
+    return data
+
+texts = []
 
 while running:
     dt = clock.tick(60) / 1000.0
@@ -69,13 +70,21 @@ while running:
         for column_index, item in enumerate(row):
             screen.blit(Sprites[item.type], ((column_index * SpriteSize), (row_index * SpriteSize)))
 
+
     #show info about blocks
     if pg.mouse.get_pressed()[0] == True:
+        texts = []
         x , y = pg.mouse.get_pos()
         time.sleep(0.2)
-        msg = info(int(x/SpriteSize),int(y/SpriteSize),grid)
-        text = font.render(msg, False, [188, 184, 184],[87, 86, 86]) 
-    screen.blit(text, [0, 0])
+        msg = str(info(int(x/SpriteSize),int(y/SpriteSize),grid)["options"])
+        data = info(int(x/SpriteSize),int(y/SpriteSize),grid)
+        for element in data["options"]:
+            texts.append(font.render(element, False, [188, 184, 184],[87, 86, 86]))
+    for index, text_entry in enumerate(texts):
+        screen.blit(text_entry, [0,index*26])
+        
+    if pg.mouse.get_pressed()[2] == True:
+        texts = []
 
     pg.display.flip()
 
