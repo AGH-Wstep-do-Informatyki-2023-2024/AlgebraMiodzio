@@ -2,10 +2,10 @@ import pygame as pg
 import time 
 from libs.blocks import Sprites, SpriteSize, Printable, SpriteSize
 from libs.tile import Tile
-DIM = 6
 
-sprite_x, sprite_y = SpriteSize
-width, height = sprite_x * DIM, sprite_y * DIM
+DIM = 30
+
+width, height = SpriteSize * DIM, SpriteSize * DIM
 
 pg.init()
 pg.display.set_caption("AlgebraMiodzio - Test")
@@ -13,8 +13,6 @@ screen = pg.display.set_mode((width, height))
 clock = pg.time.Clock()
 running = True
 dt = 0
-
-size_w, size_h = SpriteSize
 
 def GenerateGrid():    
     grid = [[Tile() for x in range(0, DIM)] for y in range(0, DIM)]
@@ -69,13 +67,13 @@ while running:
 
     for row_index, row in enumerate(grid):
         for column_index, item in enumerate(row):
-            screen.blit(Sprites[item.type], ((column_index * size_w), (row_index * size_h)))
+            screen.blit(Sprites[item.type], ((column_index * SpriteSize), (row_index * SpriteSize)))
 
     #show info about blocks
     if pg.mouse.get_pressed()[0] == True:
         x , y = pg.mouse.get_pos()
         time.sleep(0.2)
-        msg = info(int(x/160),int(y/160),grid)
+        msg = info(int(x/SpriteSize),int(y/SpriteSize),grid)
         text = font.render(msg, False, [188, 184, 184],[87, 86, 86]) 
     screen.blit(text, [0, 0])
 
