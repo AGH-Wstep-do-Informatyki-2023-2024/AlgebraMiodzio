@@ -47,7 +47,6 @@ while running:
         texts = []
         x,y = pg.mouse.get_pos()
         x,y = int(x/SpriteSize), int(y/SpriteSize)
-        print(x,y)
         sleep(0.2)
         data = GetInfo(x, y, grid)
         for element in data["options"]:

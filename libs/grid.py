@@ -1,5 +1,6 @@
 from libs.tile import Tile
-from libs.blocks import Blocks, Rules, RandomBlock, Printable
+from libs.blocks import Blocks, RandomBlock, Printable
+from libs.rules import Rules
 from random import randint, choice
 
 def TryCollapse(x, y, act_num, num, up_right_down_left, grid, DIM):
