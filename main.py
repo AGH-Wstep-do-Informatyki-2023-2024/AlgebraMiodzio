@@ -49,6 +49,7 @@ while running:
         x,y = int(x/SpriteSize), int(y/SpriteSize)
         sleep(0.2)
         data = GetInfo(x, y, grid)
+        texts.append(font.render("Type: " + str(data["type"]), False, [188, 184, 184],[87, 86, 86]))
         for element in data["options"]:
             texts.append(font.render(element, False, [188, 184, 184],[87, 86, 86]))
             
