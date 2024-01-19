@@ -11,7 +11,7 @@ def TryCollapse(x, y, act_num, num, up_right_down_left, grid, DIM):
         if(y <= DIM-1 and y >= 0 and x <= DIM-1 and x >= 0):
             if(grid[x][y].collapsed == False):
                 grid[x][y].possible_block.append(base.type)
-                base.Set_Power_M
+                base.Set_Power_M()
                 grid[x][y].power = base.power - randint(10,20)/base.power_multipler 
 
     def Normaling(x,y, base):
