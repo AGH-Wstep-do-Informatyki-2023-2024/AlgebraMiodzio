@@ -6,7 +6,7 @@ from time import sleep
 
 sys.setrecursionlimit(5000)
 
-DIM = 60
+DIM = int(sys.argv[1] if len(sys.argv) > 1 else 0) or 60
 DIM = DIM + 1 # :)
 
 screen_size = SpriteSize * DIM

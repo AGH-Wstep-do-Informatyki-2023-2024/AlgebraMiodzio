@@ -8,13 +8,12 @@ Rules = {
         Blocks.GRASS: 70,
         Blocks.ICE: 5,
         Blocks.STONE: 10,
-        Blocks.OBSIDIAN: 5,
+        # Blocks.OBSIDIAN: 5,
         Blocks.WATER: 8,
     },
     Blocks.ICE: {
-        Blocks.DIRT: 60,
-        Blocks.STONE: 20,
-        Blocks.OBSIDIAN: 5,   
+        # Blocks.DIRT: 60,
+        Blocks.ICE: 15,   
         Blocks.WATER: 25,
     },
     Blocks.COAL: {
@@ -27,7 +26,7 @@ Rules = {
     Blocks.OBSIDIAN: {
         #Blocks.OBSIDIAN: 25,
         Blocks.SNOW: 20,
-        Blocks.DIRT: 50,
+        # Blocks.DIRT: 50,
         Blocks.WATER: 30,
     },
     Blocks.SNOW: {
@@ -38,7 +37,7 @@ Rules = {
     Blocks.STONE: {
         #Blocks.STONE: 60,
         Blocks.COAL: 15,
-        Blocks.OBSIDIAN: 5,
+        # Blocks.OBSIDIAN: 5,
         Blocks.DIAMOND: 1,
         Blocks.GRASS: 70,
     },
@@ -52,7 +51,7 @@ Rules = {
         #Blocks.STONE: 60,
         Blocks.ICE: 10,
         Blocks.STONE: 30,
-        Blocks.OBSIDIAN: 20,
+        # Blocks.OBSIDIAN: 20,
         Blocks.WATER: 23,
     }
 }

@@ -13,7 +13,7 @@ class Blocks(Enum):
     WATER = 8
     GRASS = 10
     
-SpriteSize = 10
+SpriteSize = 25
     
 def img(path):
     tmp = pg.image.load(path)
